@@ -1,14 +1,23 @@
 <%= form_with model: @portfolio_items do |f| %>
-    <%= f.label "title" %>
-    <%= f.text_field :title %>
-    <%= f.label "subtitle" %>
-    <%= f.text_field :subtitle %>
-    <%= f.label "body" %>
-    <%= f.text_area :body %>
-    <%= f.label "main_image" %>
-    <%= f.url_field :main_image %>
-    <%= f.label "thumb_image" %>
-    <%= f.url_field :thumb_image %>
-    <hr>
-    <%= f.submit %>
+  <%= f.label "title" %>
+  <%= f.text_field :title %>
+  <%= f.label "subtitle" %>
+  <%= f.text_field :subtitle %>
+  <%= f.label "body" %>
+  <%= f.text_area :body %>
+  <%= f.label "main_image" %>
+  <%= f.url_field :main_image %>
+  <%= f.label "thumb_image" %>
+  <%= f.url_field :thumb_image %>
+  <%= f.label :technologies %>
+  <%= f.fields_for :technologies do |tech| %>
+    <ul>
+      <li>
+        <%= tech.label :name %>
+        <%= tech.text_field :name %>
+      </li>
+    </ul>
+  <% end %>
+  <hr>
+  <%= f.submit %>
 <% end %>
