@@ -6,4 +6,6 @@ class Blog < ApplicationRecord
   # Tambem poderia ser das duas formas abaixo
   enum status: %i[draft published]
   # enum status: %i[draft published]
+
+  validates_presence_of :title, :body
 end
