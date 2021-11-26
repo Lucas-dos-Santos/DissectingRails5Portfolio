@@ -30,9 +30,7 @@ class PortfoliosController < ApplicationController
     end
   end
 
-  def edit
-    @portfolio_items = Portfolio.find(params[:id])
-  end
+  def edit; end
 
   def update
     respond_to do |format|
