@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= @page_title %> </title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="keywords" content="<%= @seo_keywords %>" />
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'blogs', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <%= link_to 'Home', root_path %>
+    <%= link_to 'About', about_me_path %>
+    <%= link_to 'Contact', contact_path %>
+    <%= link_to 'Blog', blogs_path %>
+    <%= link_to 'Portfolio', portfolios_path %>
+    <%= toastr_flash %>
+    <% if current_user.is_a?(User) %>
+      <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= link_to 'Register', new_user_registration_path %>
+      <%= link_to 'Login', new_user_session_path %>
+    <% end %>
+    <br>
+    <%= "Obrigado por me visitar atraves do #{session[:source]}" if session[:source].present? %>
+    <br>
+    <%= yield %>
+  </body>
+</html>
