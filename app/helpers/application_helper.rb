@@ -19,4 +19,11 @@ module ApplicationHelper
         (link_to 'Login', new_user_session_path)
     end
   end
+
+  def source_helper
+    return unless session[:source].present?
+
+    message = "Obrigado por me visitar atraves do #{session[:source]}"
+    content_tag(:p, message)
+  end
 end

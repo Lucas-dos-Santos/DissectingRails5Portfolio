@@ -14,7 +14,7 @@
     <%= toastr_flash %>
     <%= login_helper %>
     <br>
-    <%= "Obrigado por me visitar atraves do #{session[:source]}" if session[:source].present? %>
+    <%= source_helper %>
     <br>
     <%= yield %>
   </body>
