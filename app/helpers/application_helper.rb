@@ -26,4 +26,8 @@ module ApplicationHelper
     message = "Obrigado por me visitar atraves do #{session[:source]}"
     content_tag(:p, message)
   end
+
+  def copyright_generator
+    LucasDevcampViewTool::Renderer.copyright('Lucas dos Santos', 'Todos os direitos reservados.')
+  end
 end
