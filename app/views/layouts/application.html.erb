@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="h-100">
   <head>
     <title><%= @page_title %> </title>
     <meta charset="utf-8">
@@ -12,13 +12,15 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body class="d-flex h-100 text-center text-white bg-dark">
-    <%# <%= render 'shared/nav' %> %>
-    <%= toastr_flash %>
-    <%# <%= login_helper %> %>
-    <br>
-    <%= source_helper %>
-    <br>
-    <%= yield %>
-    <%# <%= copyright_generator %> %>
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <%= render 'shared/application_nav' %>
+      <%= toastr_flash %>
+      <%= login_helper %>
+      <br>
+      <%= source_helper %>
+      <br>
+      <%= yield %>
+      <%= copyright_generator %>
+    </div>
   </body>
 </html>
