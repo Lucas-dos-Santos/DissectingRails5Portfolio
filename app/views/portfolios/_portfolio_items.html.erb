@@ -2,5 +2,5 @@
 <p> <%= portfolio_items.subtitle%> </p>
 <p> <%= portfolio_items.body %> </p>
 <%= image_tag portfolio_items.thumb_image %>
-<%= link_to 'Edit portfolio', edit_portfolio_path(portfolio_items) %>
-<%= link_to 'Destroy portfolio', portfolio_path(portfolio_items), method: :delete, data: {confirm: 'Are you sure?'} %>
+<%= link_to 'Edit portfolio', edit_portfolio_path(portfolio_items) if logged_in?(:site_admin) %>
+<%= link_to 'Destroy portfolio', portfolio_path(portfolio_items), method: :delete, data: {confirm: 'Are you sure?'} if logged_in?(:site_admin) %>

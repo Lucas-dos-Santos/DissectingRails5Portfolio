@@ -1,10 +1,10 @@
 <h2>Angular portfolio Items</h2>
-<%= link_to 'create a new portfolio item', new_portfolio_path %>
+<%= link_to 'create a new portfolio item', new_portfolio_path if logged_in?(:site_admin)%>
 <% @portfolio_items.each do |item| %>
   <p> <%= link_to item.title, portfolio_path(item) %> </p>
   <p> <%= item.subtitle%> </p>
   <p> <%= item.body %> </p>
   <%= image_tag item.thumb_image %>
-  <%= link_to 'Edit Item', edit_portfolio_path(item) %>
-  <%= link_to 'Destroy Item', portfolio_path(item), method: :delete, data: {confirm: 'Are you sure?'} %>
+  <%= link_to 'Edit Item', edit_portfolio_path(item) if logged_in?(:site_admin) %>
+  <%= link_to 'Destroy Item', portfolio_path(item), method: :delete, data: {confirm: 'Are you sure?'} if logged_in?(:site_admin) %>
 <% end %>

@@ -1,3 +1,3 @@
 <h2>Portfolio Items</h2>
-<%= link_to 'create a new portfolio item', new_portfolio_path %>
+<%= link_to 'create a new portfolio item', new_portfolio_path if logged_in?(:site_admin) %>
 <%= render partial: 'portfolio_items', collection: @portfolio_items %>

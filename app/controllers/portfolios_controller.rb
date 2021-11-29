@@ -1,5 +1,7 @@
 class PortfoliosController < ApplicationController
   before_action :set_item, only: %i[edit update show destroy]
+  access all: %i[show index angular], user: { except: %i[destroy new create update edit] }, site_admin: :all,
+         message: 'You shall not pass'
   layout 'portfolio'
 
   def index
