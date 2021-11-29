@@ -2,22 +2,23 @@
 <html>
   <head>
     <title><%= @page_title %> </title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="keywords" content="<%= @seo_keywords %>" />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'pages', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <body>
-    <%= render 'shared/nav' %>
+  <body class="d-flex h-100 text-center text-white bg-dark">
+    <%# <%= render 'shared/nav' %> %>
     <%= toastr_flash %>
-    <%= login_helper %>
+    <%# <%= login_helper %> %>
     <br>
     <%= source_helper %>
     <br>
     <%= yield %>
-    <%= copyright_generator %>
+    <%# <%= copyright_generator %> %>
   </body>
 </html>
