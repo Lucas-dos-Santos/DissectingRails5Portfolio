@@ -1,20 +1,12 @@
-@import 'font-awesome';
 a {
   text-decoration: none !important;
 }
 
-.blog-header {
-  line-height: 1;
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.blog-header-logo {
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif/*rtl:Amiri, Georgia, "Times New Roman", serif*/;
-  font-size: 2.25rem;
-}
-
-.blog-header-logo:hover {
-  text-decoration: none;
+.blog-jumbotron {
+  background: url('jumbotron.jpg');
+  background-size: cover;
+  height: 300px;
+  opacity: 0.9;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -33,25 +25,8 @@ h1, h2, h3, h4, h5, h6 {
 .nav-scroller {
   position: relative;
   z-index: 2;
-  height: 2.75rem;
+  height: 2rem;
   overflow-y: hidden;
-}
-
-.nav-scroller .nav {
-  display: flex;
-  flex-wrap: nowrap;
-  padding-bottom: 1rem;
-  margin-top: -1px;
-  overflow-x: auto;
-  text-align: center;
-  white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
-}
-
-.nav-scroller .nav-link {
-  padding-top: .75rem;
-  padding-bottom: .75rem;
-  font-size: .875rem;
 }
 
 .card-img-right {
@@ -67,15 +42,6 @@ h1, h2, h3, h4, h5, h6 {
 @media (min-width: 768px) {
   .h-md-250 { height: 250px; }
 }
-
-/* Pagination */
-.blog-pagination {
-  margin-bottom: 4rem;
-}
-.blog-pagination > .btn {
-  border-radius: 2rem;
-}
-
 /*
  * Blog posts
  */
@@ -114,3 +80,6 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0.5
 }
 
+.blog-logo {
+  font-size: 1.7rem;
+}

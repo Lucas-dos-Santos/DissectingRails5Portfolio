@@ -2,12 +2,22 @@
   <header class="blog-header py-3">
     <div class="row flex-nowrap justify-content-between align-items-center">
       <div class="col-4 pt-1 social-links">
-        <%= link_to '<i class="fa fa-github text-secondary"></i>'.html_safe, 'https://google.com', target: '_blank' %>
-        <%= link_to '<i class="fa fa-instagram text-danger"></i>'.html_safe, 'https://google.com', target: '_blank' %>
-        <%= link_to '<i class="fa fa-facebook"></i>'.html_safe, 'https://google.com', target: '_blank' %>
+        <%= link_to 'https://google.com', target: '_blank' do %>
+          <i class="fab fa-github text-dark"></i>
+        <% end %>
+        <%= link_to 'https://google.com', target: '_blank' do %>
+          <i class="fab fa-instagram text-danger"></i>
+        <% end %>
+        <%= link_to 'https://google.com', target: '_blank' do %>
+          <i class="fab fa-facebook"></i>
+        <% end %>
       </div>
       <div class="col-4 text-center">
-        <a class="blog-header-logo text-dark" href="#">Large</a>
+        <%= link_to root_path do %>
+          <span class="text-secondary blog-logo">
+            <strong>DevBlog</strong>
+          </span>
+        <% end %>
       </div>
       <div class="col-4 d-flex justify-content-end align-items-center">
         <a class="link-secondary" href="#" aria-label="Search">
@@ -27,4 +37,5 @@
       <%= login_helper('link-secondary') %>
     </nav>
   </div>
+  <hr>
 </div>

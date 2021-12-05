@@ -23,7 +23,7 @@ module ApplicationHelper
     return unless session[:source].present?
 
     message = "Obrigado por me visitar atraves do #{session[:source]}"
-    content_tag(:p, message)
+    content_tag(:p, message, class: 'text-center')
   end
 
   def copyright_generator

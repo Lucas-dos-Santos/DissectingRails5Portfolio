@@ -14,12 +14,9 @@
   <body>
     <%= render 'shared/blog_nav' %>
     <%= toastr_flash %>
-    <br>
-    <br>
-    <main class="container">
+    <main class="container mt-4">
       <div class="row">
         <div class="col-9">
-          <%= source_helper %>
           <%= yield %>
         </div>
         <div class="col-3">
@@ -27,6 +24,7 @@
         </div>
       </div>
     </main>
+    <%= source_helper %>
     <%= render 'shared/blog_footer' %>
   </body>
 </html>
