@@ -1,6 +1,11 @@
-<p> <%= link_to portfolio_items.title, portfolio_path(portfolio_items) %> </p>
-<p> <%= portfolio_items.subtitle%> </p>
-<p> <%= portfolio_items.body %> </p>
-<%= image_tag portfolio_items.thumb_image %>
-<%= link_to 'Edit portfolio', edit_portfolio_path(portfolio_items) if logged_in?(:site_admin) %>
-<%= link_to 'Destroy portfolio', portfolio_path(portfolio_items), method: :delete, data: {confirm: 'Are you sure?'} if logged_in?(:site_admin) %>
+<div class="col">
+  <div class="card shadow-sm">
+    <%= image_tag portfolio_items.thumb_image, class: 'bd-placeholder-img card-img-top' %>
+    <div class="card-body">
+      <p class="card-text">
+        <span><%= link_to portfolio_items.title, portfolio_path(portfolio_items) %></span>
+        <%= portfolio_items.subtitle%>
+      </p>
+    </div>
+  </div>
+</div>

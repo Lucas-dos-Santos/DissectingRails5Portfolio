@@ -12,13 +12,10 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <%= render 'shared/nav' %>
+    <%= render 'shared/portfolio_nav' %>
     <%= toastr_flash %>
-    <%= login_helper %>
-    <br>
     <%= source_helper %>
-    <br>
     <%= yield %>
-    <%= copyright_generator %>
+    <%= render 'shared/portfolio_footer' %>
   </body>
 </html>
