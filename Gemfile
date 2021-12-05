@@ -32,7 +32,8 @@ gem 'devise', '~> 4.8'
 gem 'pry'
 gem 'petergate', '~> 3.0'
 gem 'lucas_devcamp_view_tool', git: 'https://github.com/Lucas-dos-Santos/rubygem-view-tool'
-
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.7'
+gem 'kaminari', '~> 0.17.0'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

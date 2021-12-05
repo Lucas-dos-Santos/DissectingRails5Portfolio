@@ -1,3 +1,4 @@
+@import 'font-awesome';
 a {
   text-decoration: none !important;
 }
@@ -103,3 +104,13 @@ h1, h2, h3, h4, h5, h6 {
 .blog-footer p:last-child {
   margin-bottom: 0;
 }
+
+.social-links a {
+  font-size: 1.5em;
+  margin: 0 0.7rem;
+}
+
+.social-links a:hover {
+  opacity: 0.5
+}
+

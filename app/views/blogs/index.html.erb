@@ -35,13 +35,12 @@
 </div>
 <div>
   <h3 class="pb-4 mb-4 fst-italic border-bottom">
+    <%= fa_icon 'fire', class: 'text-danger' %>
     From the Firehose
   </h3>
+  <p><%= link_to 'Write a new blog', new_blog_path if logged_in?(:site_admin) %></p>
   <%= render @blogs %>
-  <nav class="blog-pagination" aria-label="Pagination">
-    <a class="btn btn-outline-primary" href="#">Older</a>
-    <a class="btn btn-outline-secondary disabled">Newer</a>
-  </nav>
+  <%= paginate @blogs %>
 </div>
 <!-- 
 <p id="notice"><%= notice %></p>
@@ -60,5 +59,5 @@
   </tbody>
 </table>
 <br>
-<%= link_to 'New Blog', new_blog_path if logged_in?(:site_admin) %>
+
 -->

@@ -1,4 +1,4 @@
-
+@import 'font-awesome';
 .btn-secondary,
 .btn-secondary:hover,
 .btn-secondary:focus {
@@ -52,4 +52,19 @@ a {
 
 .card {
   background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.social-links {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 1.7em;
+}
+
+.social-links a {
+  margin-bottom: 10px;
+}
+
+.social-links a:hover {
+  opacity: 0.5
 }
