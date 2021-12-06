@@ -10,11 +10,7 @@
           <div class="col-sm-4 offset-md-1 py-4">
             <h4 class="text-white">Explore</h4>
             <ul class="list-unstyled">
-              <li><%= link_to 'Home', root_path, class: 'text-white' %></li>
-              <li><%= link_to 'About', about_me_path, class: 'text-white' %></li>
-              <li><%= link_to 'Contact', contact_path, class: 'text-white' %></li>
-              <li><%= link_to 'Blog', blogs_path, class: 'text-white' %></li>
-              <li><%= link_to 'Portfolio', portfolios_path, class: 'text-white' %></li>
+              <%= nav_helper('text-white', '<li>', '</li>') %>
               <% if current_user.is_a?(GuestUser) %>
                 <li><%= link_to 'Register', new_user_registration_path, class: 'text-white' %></li>
                 <li><%= link_to 'Login', new_user_session_path, class: 'text-white' %></li>
@@ -37,13 +33,5 @@
   </div>
 </header>
 <div class='portfolio-social-links'>
-  <%= link_to 'https://github.com/Lucas-dos-Santos', target: '_blank' do %>
-    <i class="fab fa-github text-dark"></i>
-  <% end %>
-  <%= link_to 'https://www.instagram.com/lucas._luke', target: '_blank' do %>
-    <i class="fab fa-instagram text-danger"></i>
-  <% end %>
-  <%= link_to 'https://www.facebook.com/lucas.dossantos.98892', target: '_blank' do %>
-    <i class="fab fa-facebook"></i>
-  <% end %>
+  <%= social_links('dark') %>
 </div>

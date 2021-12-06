@@ -83,3 +83,9 @@ h1, h2, h3, h4, h5, h6 {
 .blog-logo {
   font-size: 1.7rem;
 }
+
+.active {
+  font-weight: bold;
+  color: royalblue !important;
+  border-bottom: 2px solid royalblue;
+}

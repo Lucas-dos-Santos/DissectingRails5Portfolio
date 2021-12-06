@@ -6,23 +6,11 @@
       </h4>
     <% end %>
     <nav class="nav nav-masthead justify-content-center float-md-end">
-      <%= link_to 'Home', root_path, class: 'nav-link' %>
-      <%= link_to 'About', about_me_path, class: 'nav-link' %>
-      <%= link_to 'Contact', contact_path, class: 'nav-link' %>
-      <%= link_to 'Blog', blogs_path, class: 'nav-link' %>
-      <%= link_to 'Portfolio', portfolios_path, class: 'nav-link' %>
+      <%= nav_helper('nav-link') %>
       <%= login_helper('nav-link') %>
     </nav>
   </div>
   <div class="social-links d-flex flex-column">
-    <%= link_to 'https://github.com/Lucas-dos-Santos', target: '_blank' do %>
-      <i class="fab fa-github text-white"></i>
-    <% end %>
-    <%= link_to 'https://www.instagram.com/lucas._luke', target: '_blank' do %>
-      <i class="fab fa-instagram text-danger"></i>
-    <% end %>
-    <%= link_to 'https://www.facebook.com/lucas.dossantos.98892', target: '_blank' do %>
-      <i class="fab fa-facebook"></i>
-    <% end %>
+    <%= social_links('white') %>
   </div>
 </header>
