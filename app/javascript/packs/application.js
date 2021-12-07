@@ -11,6 +11,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import 'bootstrap'
 import '../stylesheets/application'
+import './html.sortable'
 import "@fortawesome/fontawesome-free/css/all"
 global.toastr = require("toastr")
 
