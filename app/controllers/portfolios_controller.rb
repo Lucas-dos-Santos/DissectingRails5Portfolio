@@ -8,6 +8,13 @@ class PortfoliosController < ApplicationController
     @portfolio_item = Portfolio.by_position
   end
 
+  def sort
+    params[:order].each do |_key, value|
+      Portfolio.find(value['id'].to_i).update(position: value['position'].to_i)
+    end
+    head :no_content
+  end
+
   def angular
     @portfolio_items = Portfolio.angular
   end

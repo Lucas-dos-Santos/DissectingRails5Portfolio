@@ -41,10 +41,34 @@ global.toastr.options = {
     "hideMethod": "fadeOut"
   }
 
-  function readySortable () {
-    $('.sortable').sortable()
-    return;
+  function setPositions() {
+    $('.card-itemp').each(function(i) {
+      $(this).attr('data-pos', i + 1) 
+    }) 
   }
+  function readySortable () {
+    setPositions();
+    $('.sortable').sortable();
+    $('.sortable').sortable().bind('sortupdate', function(e, ui) {
+      var updated_order;
+      updated_order = [];
+      setPositions();
+      $('.card-itemp').each(function(i) {
+        updated_order.push({
+          id: $(this).data('id'),
+          position: i + 1
+        });
+      });
+      $.ajax({
+        type: 'PUT',
+        url: '/portfolios/sort',
+        data: {
+          order: updated_order
+        }
+      });
+    });
+  }
+
 
   $(document).ready(function() {
     readySortable();
