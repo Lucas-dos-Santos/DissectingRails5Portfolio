@@ -1,13 +1,9 @@
 <%= render 'shared/portfolio_header' %>
 <div class="album bg-light">
   <div class="container">
+    <%= link_to 'create a new portfolio item', new_portfolio_path if logged_in?(:site_admin) %>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 sortable">
-      <%= render partial: 'portfolio_items', collection: @portfolio_items %>
+      <%= render partial: 'portfolio_item', collection: @portfolio_item %>
     </div>
   </div>
 </div>
-<!--
-<h2>Portfolio Items</h2>
-<%= link_to 'create a new portfolio item', new_portfolio_path if logged_in?(:site_admin) %>
-<%= render partial: 'portfolio_items', collection: @portfolio_items %>
--->
