@@ -38,6 +38,7 @@ gem 'mini_magick', '~> 4.11'
 gem 'dotenv-rails', '~> 2.7', '>= 2.7.6'
 gem 'carrierwave', '~> 2.2', '>= 2.2.2'
 gem 'carrierwave-aws', '~> 1.5'
+gem 'cocoon', '~> 1.2', '>= 1.2.9'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

@@ -21,7 +21,6 @@ class PortfoliosController < ApplicationController
 
   def new
     @portfolio_items = Portfolio.new
-    3.times { @portfolio_items.technologies.build }
   end
 
   def create
@@ -31,7 +30,7 @@ class PortfoliosController < ApplicationController
       if @portfolio_items.save
         format.html do
           redirect_to @portfolio_items,
-                      flash: { notice: 'portfolio criado com sucesso' }
+                      flash: { notice: 'Portfolio has created' }
         end
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -46,7 +45,7 @@ class PortfoliosController < ApplicationController
       if @portfolio_items.update(portfolio_params)
         format.html do
           redirect_to @portfolio_items,
-                      flash: { notice: 'item atualizado com sucesso' }
+                      flash: { notice: 'Item updated' }
         end
       else
         format.html { render 'edit', status: :unprocessable_entity }
@@ -76,6 +75,6 @@ class PortfoliosController < ApplicationController
                                       :body,
                                       :main_image,
                                       :thumb_image,
-                                      technologies_attributes: [:name])
+                                      technologies_attributes: %i[id name destroy])
   end
 end
