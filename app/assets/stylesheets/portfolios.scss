@@ -22,6 +22,10 @@ a {
 
 .active {
   font-weight: bold;
-  border-bottom: 2
-  px solid white;
+  border-bottom: 2px solid white;
 }
+
+.navbar-toggler:hover {
+  box-shadow: none;
+}
+

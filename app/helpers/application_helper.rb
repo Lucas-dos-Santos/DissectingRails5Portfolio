@@ -28,7 +28,7 @@ module ApplicationHelper
   end
 
   def copyright_generator
-    LucasDevcampViewTool::Renderer.copyright('Lucas dos Santos', 'Todos os direitos reservados.')
+    LucasDevcampViewTool::Renderer.copyright('Lucas dos Santos', '- All Rights Reserved.')
   end
 
   def social_links(class_color)
