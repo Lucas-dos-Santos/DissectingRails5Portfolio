@@ -34,6 +34,10 @@ gem 'petergate', '~> 3.0'
 gem 'lucas_devcamp_view_tool', git: 'https://github.com/Lucas-dos-Santos/rubygem-view-tool'
 gem 'kaminari', '~> 0.17.0'
 gem 'jquery-ui-rails'
+gem 'mini_magick', '~> 4.11'
+gem 'dotenv-rails', '~> 2.7', '>= 2.7.6'
+gem 'carrierwave', '~> 2.2', '>= 2.2.2'
+gem 'carrierwave-aws', '~> 1.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
