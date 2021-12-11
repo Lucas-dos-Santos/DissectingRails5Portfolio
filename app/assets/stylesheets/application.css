@@ -31,3 +31,18 @@ button.toast-close-button {
   border: 0;
   -webkit-appearance: none;
 }
+
+#background-img {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-width: 100%;
+  width: auto;
+  height: auto;
+  z-index: 99900;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  background-image: url('https://raw.githubusercontent.com/github/explore/5c058a388828bb5fde0bcafd4bc867b5bb3f26f3/topics/graphql/graphql.png') no-repeat !important;
+  background-size: cover;
+}
