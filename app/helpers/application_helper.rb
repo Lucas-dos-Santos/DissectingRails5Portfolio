@@ -1,10 +1,10 @@
 module ApplicationHelper
-  def toastr_flash
+  def toastr_flash(title = 'Mr.Security')
     flash.each_with_object([]) do |(type, message), flash_messages|
       type = 'success' if type == 'notice'
       type = 'error' if type == 'alert'
       if %w[success error].include?(type)
-        text = "<script>toastr.#{type}('#{message}', 'Mr.Site says:')</script>"
+        text = "<script>toastr.#{type}('#{message}', '#{title} says:')</script>"
         flash_messages << text.html_safe if message
       end
     end.join("\n").html_safe
