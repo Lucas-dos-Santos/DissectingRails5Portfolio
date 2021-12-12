@@ -1,0 +1,5 @@
+<% if resource.errors.any? %>
+  <% resource.errors.full_messages.each do |message| %>
+    <% flash.now[:alert] = "#{message.sub("n't", 'n not')}" %>
+  <% end %>
+<% end %>

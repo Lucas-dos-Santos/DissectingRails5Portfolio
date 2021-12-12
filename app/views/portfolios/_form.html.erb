@@ -1,14 +1,5 @@
 <%= form_with model: @portfolio_items do |f| %>
-  <% if @portfolio_items.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@portfolio_items.errors.count, "error") %> prohibited this portfolio from being saved:</h2>
-      <ul>
-        <% @portfolio_items.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render 'shared/error_messages', resource: @portfolio_items %>
   <div class="container">
     <div class="row">
       <div class="col-6">
