@@ -4,28 +4,12 @@
     <p class="mb-0">Customize this section to tell your visitors a little bit about your publication, writers, content, or something else entirely. Totally up to you.</p>
   </div>
   <div class="p-4">
-    <h4 class="fst-italic">Archives</h4>
+    <h4 class="fst-italic"><i class="fab fa-twitter-square twt-color"></i> Twitter News </h4>
     <ol class="list-unstyled mb-0">
-      <li><a href="#">March 2021</a></li>
-      <li><a href="#">February 2021</a></li>
-      <li><a href="#">January 2021</a></li>
-      <li><a href="#">December 2020</a></li>
-      <li><a href="#">November 2020</a></li>
-      <li><a href="#">October 2020</a></li>
-      <li><a href="#">September 2020</a></li>
-      <li><a href="#">August 2020</a></li>
-      <li><a href="#">July 2020</a></li>
-      <li><a href="#">June 2020</a></li>
-      <li><a href="#">May 2020</a></li>
-      <li><a href="#">April 2020</a></li>
-    </ol>
-  </div>
-  <div class="p-4">
-    <h4 class="fst-italic">Elsewhere</h4>
-    <ol class="list-unstyled social-links">
-      <li><%= link_to '<i class="fa fa-github text-secondary">Github</i>'.html_safe, root_path %></li>
-      <li><%= link_to '<i class="fa fa-instagram text-danger">Instagram</i>'.html_safe, root_path %></li>
-      <li><%= link_to '<i class="fa fa-facebook">Facebook</i>'.html_safe, root_path %></li>
+      <% @tweets.each do |tweet| %>
+        <li><span class='text-danger'><%= tweet[:name] %></span>: <%= tweet[:text] %></li>
+        <hr>
+      <% end %>
     </ol>
   </div>
 </div>
