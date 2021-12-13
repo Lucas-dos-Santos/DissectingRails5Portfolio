@@ -23,6 +23,7 @@ gem 'dotenv-rails', '~> 2.7', '>= 2.7.6'
 gem 'carrierwave', '~> 2.2', '>= 2.2.2'
 gem 'carrierwave-aws', '~> 1.5'
 gem 'cocoon', '~> 1.2', '>= 1.2.9'
+gem 'twitter', '~> 7.0'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
