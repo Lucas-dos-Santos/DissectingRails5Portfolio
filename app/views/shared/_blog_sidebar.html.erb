@@ -7,7 +7,7 @@
     <h4 class="fst-italic"><i class="fab fa-twitter-square twt-color"></i> Twitter News </h4>
     <ol class="list-unstyled mb-0">
       <% @tweets.each do |tweet| %>
-        <li><span class='text-danger'><%= tweet[:name] %></span>: <%= tweet[:text] %></li>
+        <li><span class='text-danger'><%= tweet[:name] %></span>: <%= twitter_parser(tweet[:text]) %></li>
         <hr>
       <% end %>
     </ol>
