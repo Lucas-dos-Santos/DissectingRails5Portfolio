@@ -1,5 +1,3 @@
-
-
 (function(root, factory) {
     if (typeof define === 'function' && define.amd) {
       define([], factory);
@@ -9,21 +7,8 @@
       root.sortable = factory();
     }
   }(this, function() {
-  /*
-   * HTML5 Sortable library
-   * https://github.com/voidberg/html5sortable
-   *
-   * Original code copyright 2012 Ali Farhadi.
-   * This version is mantained by Alexandru Badiu <andu@ctrlz.ro> & Lukas Oppermann <lukas@vea.re>
-   * jQuery-independent implementation by Nazar Mokrynskyi <nazar@mokrynskyi.com>
-   *
-   * Released under the MIT license.
-   */
-  'use strict';
-  /*
-   * variables global to the plugin
-   */
 
+  'use strict';
 
   var dragging;
   var draggingHeight;

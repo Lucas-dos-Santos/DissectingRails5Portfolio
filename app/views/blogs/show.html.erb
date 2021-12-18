@@ -15,4 +15,6 @@
 <%= link_to 'Back', blogs_path %>
 <!-- start of comment form -->
 <%= render 'comments/comment_form' %>
-<%= render @blog.comments %>
+<div id="comments-container">
+  <%= render @blog.comments %>
+</div>
