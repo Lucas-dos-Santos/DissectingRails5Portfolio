@@ -16,5 +16,5 @@
 <!-- start of comment form -->
 <%= render 'comments/comment_form' %>
 <div id="comments-container">
-  <%= render @blog.comments %>
+  <%= render @blog.comments.order(id: :desc) %>
 </div>

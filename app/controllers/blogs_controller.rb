@@ -7,7 +7,7 @@ class BlogsController < ApplicationController
 
   # GET /blogs or /blogs.json
   def index
-    @blogs = Blog.page(params[:page]).per(5)
+    @blogs = Blog.order(id: :desc).page(params[:page]).per(5)
     @page_title = 'Meu portfolio web!'
   end
 
