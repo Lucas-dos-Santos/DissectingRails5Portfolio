@@ -1,0 +1,7 @@
+gem redis installed
+
+webpack/environment.js configured to jquery
+
+and follow the commit:
+  *****Action cable implemented in rails 6 on my way***** Reference  
+  https://github.com/Lucas-dos-Santos/DissectingRails5Portfolio/commit/2bd82d5710a645036b7ed900e607303aaf86fa16

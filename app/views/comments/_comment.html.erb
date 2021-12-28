@@ -1,0 +1,22 @@
+<div class="comment-card">
+  <div class="card p-3 mt-2 border-0">
+    <div class="card-block">
+      <div class="row">
+        <div class="col-md-1">
+          <%= gravatar_helper(comment.user) %>
+        </div>
+        <div class="col-md-11">
+          <div class="fw-bold">
+            <%= comment.user.name %>:
+          </div>
+          <div class="fst-italic">
+            <%= comment.content %>
+          </div>
+          <div class="fw-lighter">
+            Published <%= time_ago_in_words(comment.created_at) %> ago
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

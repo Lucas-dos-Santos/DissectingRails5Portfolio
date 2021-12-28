@@ -1,0 +1,32 @@
+<% unless current_user.is_a?(GuestUser) %>
+  <%= form_for @comment, url: '/comments', remote: true do |f| %>
+    <%= f.hidden_field :blog_id, value:@blog.id %>
+    <div class="form-group">
+      <div class="teste">
+        <%= f.label :content, class: 'form-label' %>
+        <div class="count-sum mt-1">
+          <span id="current">0</span>
+          <span id="maxi">  / 360</span>
+        </div>
+      </div>
+      <%= f.text_area :content, maxlength: 360, class: 'form-control count-text-area', rows: 5 %>
+    </div>
+    <div class="form-group">
+      <%= f.submit 'Post Comment', class: 'btn btn-sm btn-outline-primary mt-4', onSubmit: 'handleClick();' %>
+    </div>
+  <% end %>
+<% end %>
+<script>
+  $(document).ready(function () {
+    if ($('.count-text-area').length) {
+      $('#current').text($('.count-text-area').val().length);
+      $('.count-text-area').keyup(function () {
+        var characterCount = $(this).val().length;
+        $('#current').text(characterCount);
+      });
+    }
+  });
+  function handleClick() {
+    $('#comment_content').val('')
+  }
+</script>

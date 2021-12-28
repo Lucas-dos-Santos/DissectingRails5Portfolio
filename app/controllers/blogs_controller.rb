@@ -1,5 +1,5 @@
 class BlogsController < ApplicationController
-  before_action :set_blog, only: %i[show edit update destroy toggle_status]
+  before_action :set_blog, only: %i[edit update destroy toggle_status]
   before_action :set_tweets
   access all: %i[show index], user: { except: %i[destroy new create update edit toggle_status] }, site_admin: :all,
          message: 'You shall not pass'
@@ -7,12 +7,14 @@ class BlogsController < ApplicationController
 
   # GET /blogs or /blogs.json
   def index
-    @blogs = Blog.page(params[:page]).per(5)
+    @blogs = Blog.order(id: :desc).page(params[:page]).per(5)
     @page_title = 'Meu portfolio web!'
   end
 
   # GET /blogs/1 or /blogs/1.json
   def show
+    @blog = Blog.includes(:comments).friendly.find(params[:id])
+    @comment = Comment.new
     @page_title = @blog.title
   end
 

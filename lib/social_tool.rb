@@ -7,7 +7,7 @@ module SocialTool
       config.access_token_secret = ENV.fetch('TWITTER_ACCESS_SECRET_TOKEN')
     end
 
-    client.search('#rails', lang: 'en', result_type: 'recent').take(6).collect do |tweet|
+    client.search('#react', lang: 'en', result_type: 'recent').take(6).collect do |tweet|
       twitter = { name: tweet.user.screen_name, text: tweet.text }
     end
   end

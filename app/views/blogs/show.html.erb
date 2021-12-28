@@ -13,3 +13,8 @@
 </p>
 <%= link_to 'Edit', edit_blog_path(@blog) if logged_in?(:site_admin) %> |
 <%= link_to 'Back', blogs_path %>
+<!-- start of comment form -->
+<%= render 'comments/comment_form' %>
+<div id="comments-container">
+  <%= render @blog.comments.order(id: :desc) %>
+</div>
