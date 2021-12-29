@@ -1,5 +1,8 @@
 <article class="blog-post">
   <h2 class="blog-post-title"><%= link_to blog.title, blog %></h2>
+  <% blog.topics.each do |topic| %>
+    <span class="badge bg-secondary"><%= topic.title %></span>
+  <% end %>
   <p class="blog-post-meta">Published <%= time_ago_in_words(blog.created_at) %> ago</p>
   <%  if logged_in?(:site_admin) %>
     <p>

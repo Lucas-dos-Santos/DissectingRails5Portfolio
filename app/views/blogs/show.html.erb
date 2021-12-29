@@ -4,6 +4,12 @@
   <%= @blog.title %>
 </p>
 <p>
+  <strong>Topics:</strong>
+  <% @blog.topics.each do |topic| %>
+    <span class="badge bg-secondary"><%= topic.title %></span>
+  <% end %>
+</p>
+<p>
   <strong>Body:</strong>
   <%= @blog.body %>
 </p>

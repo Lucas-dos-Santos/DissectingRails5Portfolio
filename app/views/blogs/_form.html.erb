@@ -5,10 +5,14 @@
     <%= form.text_field :title, class: 'form-control' %>
   </div>
   <div class="form-group">
+    <%= form.label :topic_ids, 'Topics', class: 'form-label' %>
+    <%= form.collection_check_boxes :topic_ids, Topic.all, :id, :title %>
+  </div>
+  <div class="form-group">
     <%= form.label :body, class: 'form-label' %>
     <%= form.text_area :body, class: 'form-control', rows: 20 %>
   </div>
-  <div class="form-group">
+  <div class="form-group mt-3">
     <%= form.submit class: 'btn btn-sm btn-primary' %>
   </div>
 <% end %>

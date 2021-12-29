@@ -7,9 +7,10 @@ class Blog < ApplicationRecord
   enum status: %i[draft published]
   # enum status: %i[draft published]
 
-  validates_presence_of :title, :body
+  validates_presence_of :title, :body, :topics
 
-  belongs_to :topic
+  has_many :blogs_topics
+  has_many :topics, through: :blogs_topics
   has_many :comments, dependent: :destroy
 
   def self.recent
