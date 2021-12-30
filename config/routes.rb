@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'angular-items', to: 'portfolios#angular'
   get 'about-me', to: 'pages#about'
   get 'contact', to: 'pages#contact'
+  resources :topics, only: %i[show]
   resources :blogs do
     member do
       get :toggle_status
