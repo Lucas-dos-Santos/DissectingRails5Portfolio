@@ -1,4 +1,18 @@
 <p id="notice"><%= notice %></p>
+<div class='bg-light p-2 breadcrumb-container'>
+  <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><%= link_to 'Home', root_path %></li>
+      <li class="breadcrumb-item"><%= link_to 'Blogs', blogs_path %></li>
+      <li class="breadcrumb-item"><%= link_to "#{@blog.topics.first.title}", topic_path(@blog.topics.first.id) %></li>
+      <li class="breadcrumb-item active" aria-current="page"><%= @blog.title %></li>
+    </ol>
+  </nav>
+  <div>
+    <%= link_to '<i class="fas fa-edit"></i>'.html_safe , edit_blog_path(@blog), class: 'text-dark mx-2' if logged_in?(:site_admin) %>
+    <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, @blog, method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-danger' if logged_in?(:site_admin) %>
+  </div>
+</div>
 <p>
   <strong>Title:</strong>
   <%= @blog.title %>
@@ -17,9 +31,6 @@
   <strong>Status:</strong>
   <%= @blog.status %>
 </p>
-<%= link_to 'Edit', edit_blog_path(@blog) if logged_in?(:site_admin) %> |
-<%= link_to 'Back', blogs_path %>
-<!-- start of comment form -->
 <%= render 'comments/comment_form' %>
 <div id="comments-container">
   <%= render @blog.comments.order(id: :desc) %>
