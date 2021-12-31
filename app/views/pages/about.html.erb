@@ -1,11 +1,71 @@
-<h1>About Me</h1>
-<hr>
 <div class="row">
   <div class="col-md-4">
-    <%= image_tag 'profile.jpeg', width: 250, alt:'profile image', class: 'profile-img' %>
+    <%= image_tag 'profile.jpeg', width: 200, alt:'profile image', class: 'profile-img' %>
+    <% @skills.each do |skill| %>
+      <div class='text-start mt-2'>
+        <%= skill.badge.html_safe %>
+        <label><%= skill.title %></label>
+        <div class="progress">
+          <div class="progress-bar bg-warning" role="progressbar" style="width: <%= skill.percent_utilized %>%" aria-valuenow="<%= skill.percent_utilized %>" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+      </div>
+    <% end %>
   </div>
-  <div class="col-md-8 fs-5 about-text">
-    <p>With over a decade of development experience in a number of industries I realized that the typical product creation process between clients and developers was flawed. All too often developers rarely communicate to clients throughout the development stage, resulting in a final product that fails to reach the goal sought by the customer and end user.</p>
-    <p>For this reason I decided to utilize a completely different development pattern that focuses on highly focused communication and transparent design patterns. When I take on a project not only do I work to craft the</p>
+  <div class="col-md-8 about-text">
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <span class='fw-bold color-buttons'>
+              About Me
+            </span>
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+          <div class="accordion-body bg-accordion">
+            <p>With over a decade of development experience in a number of industries I realized that the typical product creation process between clients and developers was flawed. All too often developers rarely communicate to clients throughout the development stage, resulting in a final product that fails to reach the goal sought by the customer and end user.</p>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            <span class='fw-bold color-buttons'>
+              Job History
+            </span>
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+          <div class="accordion-body bg-accordion">
+            <p class='text-center'>
+              <span class='fw-bold'>Trainee software developer</span> | 2021 - present | Euax Consulting<br>
+              <span class='fst-italic'>I worked with ruby, rails, javascript, a bit of react, on maintenance and new features.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            <span class='fw-bold color-buttons'>
+              Education | Courses
+            </span>
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+          <div class="accordion-body bg-accordion">
+            <ul>
+              <li>Software Engineering | 2021 - present</li>
+              <li>
+                <a href="https://www.udemy.com/certificate/UC-651d67b0-c311-4fe9-a41b-48c5195a4115" target='_blank'>The Complete Ruby on Rails Developer Course | Udemy</a>
+              </li>
+              <li>
+                <a href="google.com" target='_blank'>Dissecting Ruby on Rails 5 | Udemy</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
