@@ -7,6 +7,7 @@
 
 body {
   background: #5FBCC7 !important;
+  font-family: 'Lato', sans-serif !important;
 }
 
 a {
@@ -93,4 +94,9 @@ a {
 
 .accordion-button:not(.collapsed) {
   background: white !important;;
+}
+
+h1, h2, h3,
+h4, h5, h6 {
+  font-family: 'Roboto Slab', serif !important;
 }

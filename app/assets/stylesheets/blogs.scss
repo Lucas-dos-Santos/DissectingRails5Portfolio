@@ -2,6 +2,10 @@ a {
   text-decoration: none !important;
 }
 
+body {
+  font-family: 'Lato', sans-serif !important;
+}
+
 .blog-jumbotron {
   background: url('jumbotron.jpg');
   background-size: cover;
@@ -10,7 +14,7 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif/*rtl:Amiri, Georgia, "Times New Roman", serif*/;
+  font-family: 'Roboto Slab', serif !important;
 }
 
 .display-4 {
