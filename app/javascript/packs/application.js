@@ -9,7 +9,6 @@ import './html.sortable'
 import "@fortawesome/fontawesome-free/css/all"
 require("@nathanvda/cocoon")
 require("channels");
-import ScrollReveal from 'scrollreveal'
 global.toastr = require("toastr")
 var jQuery = require('jquery')
 global.$ = global.jQuery = jQuery;
@@ -68,6 +67,5 @@ global.toastr.options = {
 
   $(document).ready(function() {
     readySortable();
-    ScrollReveal().reveal('.headline');
   })
 
