@@ -1,4 +1,4 @@
-<% unless current_user.is_a?(GuestUser) %>
+<% if !current_user.is_a?(GuestUser) %>
   <%= form_for @comment, url: '/comments', remote: true do |f| %>
     <%= f.hidden_field :blog_id, value:@blog.id %>
     <div class="form-group">
@@ -12,9 +12,12 @@
       <%= f.text_area :content, maxlength: 360, class: 'form-control count-text-area', rows: 5 %>
     </div>
     <div class="form-group">
-      <%= f.submit 'Post Comment', class: 'btn btn-sm btn-outline-primary mt-4', onSubmit: 'handleClick();' %>
+      <%= f.submit 'Post Comment', class: 'btn btn-sm btn-outline-primary mt-4', onSubmit: 'handleClick();', data: {confirm: 'Are you sure?'} %>
     </div>
   <% end %>
+<% else %>
+  <label>Login to make your comment</label>
+  <hr>
 <% end %>
 <script>
   $(document).ready(function () {
