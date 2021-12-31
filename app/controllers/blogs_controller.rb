@@ -1,21 +1,29 @@
 class BlogsController < ApplicationController
-  before_action :set_blog, only: %i[edit update destroy toggle_status]
-  before_action :set_tweets
+  include SetTweets
+  before_action :set_blog, only: %i[show edit update destroy toggle_status]
   access all: %i[show index], user: { except: %i[destroy new create update edit toggle_status] }, site_admin: :all,
          message: 'You shall not pass'
   layout 'blog'
 
   # GET /blogs or /blogs.json
   def index
-    @blogs = Blog.order(id: :desc).page(params[:page]).per(5)
+    @blogs = if logged_in?(:site_admin)
+               Blog.recent.page(params[:page]).per(5)
+             else
+               Blog.published.recent.page(params[:page]).per(5)
+             end
     @page_title = 'Meu portfolio web!'
   end
 
   # GET /blogs/1 or /blogs/1.json
   def show
-    @blog = Blog.includes(:comments).friendly.find(params[:id])
-    @comment = Comment.new
-    @page_title = @blog.title
+    if logged_in?(:site_admin) || @blog.published?
+      @blog = Blog.includes(:comments).friendly.find(params[:id])
+      @comment = Comment.new
+      @page_title = @blog.title
+    else
+      redirect_to blogs_path, notice: 'You are not authorized to access this page.'
+    end
   end
 
   # GET /blogs/new
@@ -79,10 +87,6 @@ class BlogsController < ApplicationController
   end
 
   def blog_params
-    params.require(:blog).permit(:title, :body)
-  end
-
-  def set_tweets
-    @tweets = SocialTool.twitter_search
+    params.require(:blog).permit(:title, :status, :body, topic_ids: [])
   end
 end

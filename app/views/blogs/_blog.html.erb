@@ -1,12 +1,12 @@
 <article class="blog-post">
-  <h2 class="blog-post-title"><%= link_to blog.title, blog %></h2>
-  <p class="blog-post-meta">Published <%= time_ago_in_words(blog.created_at) %> ago</p>
-  <%  if logged_in?(:site_admin) %>
-    <p>
-      <%= link_to blog.status, toggle_status_blog_path(blog) %> /
-      <%= link_to 'Edit', edit_blog_path(blog) %> /
-      <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
-    </p>
+  <div class='d-flex justify-content-between align-items-center'>
+    <h2 class="blog-post-title"><%= link_to blog.title, blog %></h2>
+    <%= render 'blogs/admin_actions', blog: blog %>
+  </div>
+  <% blog.topics.each do |topic| %>
+    <span class="badge bg-secondary"><%= topic.title %></span>
   <% end %>
+  <p class="blog-post-meta">Published <%= time_ago_in_words(blog.created_at) %> ago</p>
   <p><%= blog.body %></p>
 </article>
+<hr>

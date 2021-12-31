@@ -1,9 +1,11 @@
 <div class="position-sticky" style="top: 2rem;">
-  <div class="p-4 mb-3 bg-light rounded">
-    <h4 class="fst-italic">About</h4>
-    <p class="mb-0">Customize this section to tell your visitors a little bit about your publication, writers, content, or something else entirely. Totally up to you.</p>
+  <div class="p-4 mb-3 rounded">
+    <h4 class="fst-italic"><i class="fab fa-hive text-secondary"></i> Topics</h4>
+    <% Topic.all.each do |topic| %>
+      <span class="badge bg-secondary"><%= link_to topic.title, topic_path(topic), class: 'text-white text-decoration-none' %></span>
+    <% end %>
   </div>
-  <div class="p-4">
+  <div class="p-4 rounded">
     <h4 class="fst-italic"><i class="fab fa-twitter-square twt-color"></i> Twitter News </h4>
     <ol class="list-unstyled mb-0">
       <% @tweets.each do |tweet| %>

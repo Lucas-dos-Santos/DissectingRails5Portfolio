@@ -68,3 +68,4 @@ global.toastr.options = {
   $(document).ready(function() {
     readySortable();
   })
+
