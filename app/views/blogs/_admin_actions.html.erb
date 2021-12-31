@@ -1,0 +1,7 @@
+<% if logged_in?(:site_admin) %>
+  <div>
+    <%= link_to "<i class='fas mx-1 #{blog_status_color(blog)} fa-file-alt'></i>".html_safe, toggle_status_blog_path(blog)%>
+    <%= link_to '<i class="fas mx-1 text-dark fa-edit"></i>'.html_safe, edit_blog_path(blog) %>
+    <%= link_to '<i class="fas text-danger fa-trash-alt"></i>'.html_safe, blog, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+<% end %>
