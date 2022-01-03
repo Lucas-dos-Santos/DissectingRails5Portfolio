@@ -124,3 +124,7 @@ h1, h2, h3, h4, h5, h6 {
   background: #D4F4DD;
   border-radius: 5px;
 }
+
+.ckeditor .ck-editor__editable  {
+  min-height: 300px;
+}

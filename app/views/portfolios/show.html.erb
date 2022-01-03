@@ -7,7 +7,7 @@
       <h1> <%= @portfolio_items.title %> </h1>
       <hr>
       <em><%= @portfolio_items.subtitle %></em>
-      <p><%= @portfolio_items.body %></p>
+      <p><%= @portfolio_items.body.html_safe %></p>
       <hr>
       <h2>Technologies Used: </h2>
       <% @portfolio_items.technologies.each do |tech| %>

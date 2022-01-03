@@ -17,11 +17,22 @@
     <%= form.label :status, 'Published', class: 'form-check-label' %>
   </div>
   <hr>
-  <div class="form-group">
+  <div class="form-group ckeditor">
     <%= form.label :body, class: 'form-label' %>
-    <%= form.text_area :body, class: 'form-control', rows: 20 %>
+    <%= form.text_area :body, id: 'ck_editor_blog', class: 'form-control', rows: 10 %>
   </div>
   <div class="form-group mt-3">
     <%= form.submit class: 'btn btn-sm btn-primary' %>
   </div>
 <% end %>
+<script>
+  CKEDITOR.replace('ck_editor_blog', {
+    toolbar: [
+      { name: 'styles', items: [ 'Format', 'Font'] },
+      { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Strike'] },
+      { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', 'JustifyLeft', 'JustifyCenter', 'JustifyRight'] },
+      { name: 'insert', items: [ 'Image'] },
+      { name: 'colors', items: [ 'TextColor', 'BGColor' ] }
+    ]
+  });
+</script>

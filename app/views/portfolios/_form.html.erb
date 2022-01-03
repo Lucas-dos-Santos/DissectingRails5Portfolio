@@ -21,9 +21,9 @@
         </div>
       </div>
       <div class="col-6">
-        <div class="form-group">
+        <div class="form-group ckeditor">
           <%= f.label "body", class: 'form-label' %>
-          <%= f.text_area :body, class: 'form-control', rows: 10 %>
+          <%= f.text_area :body, id: 'ck_editor_portfolio', class: 'form-control', rows: 10 %>
         </div>
       </div>
     </div>
@@ -46,3 +46,14 @@
     </div>
   </div>
 <% end %>
+<script>
+  CKEDITOR.replace('ck_editor_portfolio', {
+    toolbar: [
+      { name: 'styles', items: [ 'Format', 'Font'] },
+      { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold', 'Italic', 'Underline', 'Strike'] },
+      { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ], items: [ 'NumberedList', 'BulletedList', 'JustifyLeft', 'JustifyCenter', 'JustifyRight'] },
+      { name: 'insert', items: [ 'Image'] },
+      { name: 'colors', items: [ 'TextColor', 'BGColor' ] }
+    ]
+  });
+</script>
