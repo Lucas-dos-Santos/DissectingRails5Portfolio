@@ -12,9 +12,9 @@
   <div class="form-group mb-2">
     <%= form.label :status, class: 'form-check-label' %>
     <%= form.radio_button :status, 'draft', class: 'form-check-input mx-2' %>
-    <%= form.label :status, 'Draft', class: 'form-check-label' %>
+    <%= form.label :status, I18n.t('activerecord.attributes.blog.draft'), class: 'form-check-label' %>
     <%= form.radio_button :status, 'published', class: 'form-check-input mx-2' %>
-    <%= form.label :status, 'Published', class: 'form-check-label' %>
+    <%= form.label :status, I18n.t('activerecord.attributes.blog.published'), class: 'form-check-label' %>
   </div>
   <hr>
   <div class="form-group ckeditor">
