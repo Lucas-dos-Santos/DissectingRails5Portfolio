@@ -57,9 +57,9 @@ global.toastr.options = {
       });
       $.ajax({
         type: 'PUT',
-        url: '/portfolios/sort',
+        url: '/portfolio/sort',
         data: {
-          order: updated_order
+          order: updated_order  
         }
       });
     });
