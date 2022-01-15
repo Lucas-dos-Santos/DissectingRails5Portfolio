@@ -49,7 +49,7 @@ module ApplicationHelper
       { url: about_me_path, title: 'About' },
       { url: contact_path, title: 'Contact' },
       { url: blogs_path, title: 'Blog' },
-      { url: portfolios_path, title: 'Portfolio' }
+      { url: portfolio_index_path, title: 'Portfolio' }
     ]
   end
 

@@ -61,7 +61,7 @@ class PortfoliosController < ApplicationController
   def destroy
     @portfolio_items.destroy
     respond_to do |format|
-      format.html { redirect_to portfolios_path, notice: 'Item was removed.' }
+      format.html { redirect_to portfolio_index_path, notice: 'Item was removed.' }
       format.js { head :no_content }
     end
   end

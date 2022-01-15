@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   scope '(:locale)', locales: /en|pt-BR/ do
     devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'login', sign_up: 'register' }
-    resources :portfolios do
+    resources :portfolio, controller: 'portfolios' do
       put :sort, on: :collection
     end
     get 'about-me', to: 'pages#about'
