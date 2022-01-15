@@ -6,6 +6,7 @@ class PortfoliosController < ApplicationController
 
   def index
     @portfolio_item = Portfolio.by_position
+    @page_title = 'My Portfolio'
   end
 
   def sort
@@ -53,7 +54,9 @@ class PortfoliosController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @page_title = @portfolio_items.title
+  end
 
   def destroy
     @portfolio_items.destroy

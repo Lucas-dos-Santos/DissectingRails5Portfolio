@@ -12,7 +12,7 @@ class BlogsController < ApplicationController
              else
                Blog.published.recent.page(params[:page]).per(5)
              end
-    @page_title = 'Meu portfolio web!'
+    @page_title = 'My Blog'
   end
 
   # GET /blogs/1 or /blogs/1.json
